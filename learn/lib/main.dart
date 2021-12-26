@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'learn1.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +25,28 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: Scaffold(
+        appBar: AppBar(title: Text('Flutter')),
+        body: ListView(children: [
+          UpdateItemWidget(model: UpdateItemModel(
+            appIcon:"assets/icon.png",
+            appDescription:"Thanks for using Google Maps! This release brings bug fixes that improve our product to help you discover new places and navigate to them.",
+            appName: "Google Maps - Transit & Fond",
+            appSize: "137.2",
+            appVersion: "Version 5.19",
+            appDate: "2019年6月5日"
+          ),onPressed: (){},),
+          UpdateItemWidget(model: UpdateItemModel(
+              appIcon:"assets/icon.png",
+              appDescription:"Thanks for using Google Maps! This release brings bug fixes that improve our product to help you discover new places and navigate to them.",
+              appName: "Baidu Maps - Transit & Fond",
+              appSize: "100.2",
+              appVersion: "Version 5.19",
+              appDate: "2019年9月5日"
+          ),onPressed: (){},)
+        ],),
+      ),
     );
   }
 }
